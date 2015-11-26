@@ -1,0 +1,17 @@
+{# Main page #}
+{% extends "base.html.twig" %}
+
+{% block title %}Main{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Main Index</h1>
+    <p class="important">
+    <h2>Worklog</h2><br>
+        {{name}}<br>
+    </p>
+{% endblock %}

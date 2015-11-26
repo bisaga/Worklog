@@ -1,0 +1,4 @@
+# exclude 
+/composer.lock
+/vendor/
+/web/bower_components/
