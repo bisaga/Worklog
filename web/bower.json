@@ -1,0 +1,20 @@
+{
+  "name": "Worklog",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bisaga/Worklog",
+  "authors": [
+    "bisaga <igor.babic@bisaga.com>"
+  ],
+  "main": "index.php",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "startbootstrap-sb-admin-2": "~1.0.7"
+  }
+}

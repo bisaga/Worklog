@@ -11,7 +11,7 @@
         
         <!-- FAVICON -->
         <link rel="icon" type="image/x-icon" href="{{app.request.basepath}}/favicon.ico" />
-        
+
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="{{app.request.basepath}}/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 
@@ -42,12 +42,54 @@
     {% endblock %}    
 </head>
 <body>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-        {% block footer %}
-            The MIT License (MIT) Copyright &copy; 2015 <a href="http://bisaga.com/">Bisaga</a>.
-        {% endblock %}
+    <div id="main-panel">
+        <!--navbar-->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class=container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{app.request.basepath}}/index.php">
+                        <img alt="Bisaga" src="{{app.request.basepath}}/images/w24x24.png"/>
+                    </a>
+                </div>
+                <!--/.navbar-header-->
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                             <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                            
+                    </li>    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+                <!-- /.navbar-top-links -->
+
+            </div>
+        </nav>
+        <!-- /.navbar -->
+        
+        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="footer">
+            {% block footer %}
+                The MIT License (MIT) Copyright &copy; 2015 <a href="http://bisaga.com/">Bisaga</a>.
+            {% endblock %}
+        </div>
     </div>
+    
     {% block javascripts %}{% endblock %}
     <!-- jQuery -->
     <script src="{{app.request.basepath}}/bower_components/jquery/dist/jquery.min.js"></script>
@@ -64,7 +106,6 @@
     <script src="{{app.request.basepath}}/bower_components/morrisjs/morris.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
-    
+    <script src="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>  
 </body>
 </html>
