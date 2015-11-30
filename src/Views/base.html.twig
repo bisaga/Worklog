@@ -43,55 +43,51 @@
 </head>
 <body>
     <div id="main-panel">
-        <!--navbar-->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class=container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{app.request.basepath}}/index.php">
-                        <img alt="Bisaga" src="{{app.request.basepath}}/images/w24x24.png"/>
-                    </a>
-                </div>
-                <!--/.navbar-header-->
-                <ul class="nav navbar-top-links navbar-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-tasks fa-fw"></i><i class="fa fa-caret-down"></i>
-                        </a>
-                    </li>    
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                             <i class="fa fa-bell fa-fw"> </i><i class="fa fa-caret-down"></i>
-                        </a>
-                    </li>    
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> </i><i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-user -->
-                    </li>
-                    <!-- /.dropdown -->
-                </ul>
-                <!-- /.navbar-top-links -->
-
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{app.request.basepath}}/index.php">
+                    <img alt="Bisaga" src="{{app.request.basepath}}/images/w24x24.png"/>
+                </a>
             </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bell fa-fw"></i><span class="badge">1</span>
+                    </a>
+                </li>    
+                <li>
+                    <a href="#">
+                        <i class="fa fa-tasks fa-fw"></i>
+                    </a>
+                </li>    
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
         </nav>
-        <!-- /.navbar -->
         
-        <div id="content">{% block content %}{% endblock %}</div>
-        <div id="footer">
-            {% block footer %}
-                The MIT License (MIT) Copyright &copy; 2015 <a href="http://bisaga.com/">Bisaga</a>.
-            {% endblock %}
+        <div class="container">
+            {% block content %}{% endblock %}
         </div>
+        
+        <footer class="footer">
+            <div class="container">
+            {% block footer %}
+                <p class="text-muted"> The MIT License (MIT) Copyright &copy; 2015 <a href="http://bisaga.com/">Bisaga</a></p>
+            {% endblock %}
+            </div>
+        </footer>
     </div>
     
     {% block javascripts %}{% endblock %}
