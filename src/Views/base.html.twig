@@ -2,91 +2,108 @@
 <html>
 <head>
     {% block head %}
-        <!-- Standard HTML head -->
-        <meta charset="UtF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}{% endblock %} - Bisaga Worklog</title>
-        {% block stylesheets %}{% endblock %} 
-        
-        <!-- FAVICON -->
-        <link rel="icon" type="image/x-icon" href="{{app.request.basepath}}/favicon.ico" />
+    <!-- Standard HTML head -->
+    <meta charset="UtF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %} - Bisaga Worklog</title>
+    {% block stylesheets %}{% endblock %} 
 
-        <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="{{app.request.basepath}}/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="{{app.request.basepath}}/favicon.ico" />
 
-        <!-- MetisMenu CSS -->
-        <link href="{{app.request.basepath}}/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{app.request.basepath}}/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 
-        <!-- Timeline CSS -->
-        <link href="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="{{app.request.basepath}}/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
-        <!-- SB-Admin CSS -->
-        <link href="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Timeline CSS -->
+    <link href="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css" rel="stylesheet">
 
-        <!-- Morris Charts CSS -->
-        <link href="{{app.request.basepath}}/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- SB-Admin CSS -->
+    <link href="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
 
-        <!-- Custom Fonts -->
-        <link href="{{app.request.basepath}}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Morris Charts CSS -->
+    <link href="{{app.request.basepath}}/bower_components/morrisjs/morris.css" rel="stylesheet">
 
-        <!-- Worklog custom CSS -->
-        <link rel="stylesheet" href="{{app.request.basepath}}/css/worklog.css" />
-        
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->          
+    <!-- Custom Fonts -->
+    <link href="{{app.request.basepath}}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Worklog custom CSS -->
+    <link rel="stylesheet" href="{{app.request.basepath}}/css/worklog.css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->          
     {% endblock %}    
 </head>
 <body>
     <div id="main-panel">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="{{app.request.basepath}}/index.php">
-                    <img alt="Bisaga" src="{{app.request.basepath}}/images/w24x24.png"/>
-                </a>
-            </div>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{app.request.basepath}}/index.php">
+                        <img alt="Bisaga" src="{{app.request.basepath}}/images/w24x24.png"/>
+                    </a>
+                </div>
+                <div>
+                    <ul class="nav navbar-top-links navbar-left">
+                   </ul>
+                </div>
+                <div>    
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-bell fa-fw"></i><span class="badge">1</span>
+                            </a>
+                        </li>    
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-tasks fa-fw"></i>
+                            </a>
+                        </li>    
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-bell fa-fw"></i><span class="badge">1</span>
-                    </a>
-                </li>    
-                <li>
-                    <a href="#">
-                        <i class="fa fa-tasks fa-fw"></i>
-                    </a>
-                </li>    
-                
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
+                                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-navicon fa-fw"></i></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#"><i class="fa fa-tasks fa-fw"></i> Task management</a></li>
+                                <li><a href="#"><i class="fa fa-calendar fa-fw"></i> Calendar </a></li>
+                                <li><a href="#"><i class="fa fa-area-chart fa-fw"></i> Reports</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
-                </li>
-            </ul>
-            
+                </div>
+            </div>        
         </nav>
-        
+
         <div class="container">
             {% block content %}{% endblock %}
         </div>
-        
+
     </div>
-    
+
     {% block javascripts %}{% endblock %}
     <!-- jQuery -->
     <script src="{{app.request.basepath}}/bower_components/jquery/dist/jquery.min.js"></script>
-    
+
     <!-- Bootstrap Core JavaScript -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{app.request.basepath}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>    
