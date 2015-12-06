@@ -23,13 +23,14 @@ class Application extends Silex\Application
         $this->createRoutes();
     }
 
-    public function createRoutes() 
+    private function createRoutes() 
     {
-        $this->get('/', 'Bisaga\Controller\MainController::index');
-        //$this->get('/hello/{name}', 'Bisaga\Controller\HelloController::hello');
+        $this->get('/', 'Bisaga\Controller\DashboardController::show');
+        $this->get('/workday', 'Bisaga\Controller\WorkdayController::show');
+        $this->get('/notimplemented', 'Bisaga\Controller\NotImplementedController::show');
     }
     
-    public function registerServices()
+    private function registerServices()
     {
         // Doctrine DBAL database access provider 
         $this->register(new DoctrineServiceProvider(), 
