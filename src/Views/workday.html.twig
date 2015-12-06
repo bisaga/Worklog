@@ -7,6 +7,19 @@
     {{ parent() }}
 {% endblock %}
 
-{% block content %}
-<h1>{{name}}</h1
+{% block content %}   
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">{{name}}</div>
+    </div>
+    <div class="panel-body">
+        body
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        line 2
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <div class="panel-footer">
+        footer
+    </div>
+</div>
 {% endblock %}

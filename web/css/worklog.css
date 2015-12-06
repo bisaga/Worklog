@@ -7,8 +7,6 @@ and open the template in the editor.
     Created on : 26.11.2015, 19:26:27
     Author     : igorb
 */
-
-#main-panel {
-    width: 100%;
-    margin-top: 30px;
+body {
+    padding-top:65px;
 }
