@@ -33,8 +33,7 @@ class Application extends Silex\Application
     private function registerServices()
     {
         // Doctrine DBAL database access provider 
-        $this->register(new DoctrineServiceProvider(), 
-                    array(
+        $this->register(new DoctrineServiceProvider(), array(
                         'db.options' => array(
                             'driver'    =>  'pdo_mysql',
                             'host'      =>  'localhost',
@@ -47,15 +46,15 @@ class Application extends Silex\Application
                                             # [20] PDO::ATTR_EMULATE_PREPARES = false 
                                             # [17] PDO::ATTR_STRINGIFY_FETCHES = false
                         )
-                    )
-                );
+                ));
 
-        $this->register(new Silex\Provider\TwigServiceProvider(), 
-                    array (
+        $this->register(new Silex\Provider\TwigServiceProvider(), array (
                         'twig.path' => __DIR__.'\Views',
-                    )
-                );
-        
+                ));
+
+        /*
+        $this->register(new Bisaga\Domain\WorkdayService());
+        */
     }
     
 }

@@ -15,14 +15,11 @@
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{app.request.basepath}}/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 
+    <!-- Date picker component-->
+    <link rel="stylesheet" href="{{app.request.basepath}}/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />    
+    
     <!-- MetisMenu CSS -->
     <link href="{{app.request.basepath}}/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Timeline CSS -->
-    <link href="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css" rel="stylesheet">
-
-    <!-- SB-Admin CSS -->
-    <link href="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="{{app.request.basepath}}/bower_components/morrisjs/morris.css" rel="stylesheet">
@@ -42,30 +39,33 @@
     {% endblock %}    
 </head>
 <body>
-    <div id="main-panel">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="navbar-header">
                 <a class="navbar-brand" href="{{app.request.basepath}}/index.php">
                     <img alt="Bisaga" src="{{app.request.basepath}}/images/w24x24.png"/>
+                </a>
+                <a class="navbar-brand" href="{{app.request.basepath}}/index.php">
+                    Worklog v1.0
                 </a>
             </div>
             <div>    
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
                         <a href="{{app.request.basepath}}/index.php/workday">
-                            <i class="fa fa-calendar-o fa-fw fa-lg"></i>
+                            <i class="fa fa-calendar-o fa-fw"></i> Workday
                         </a>
                     </li>    
 
                     <li class="dropdown">
                         <a  href="{{app.request.basepath}}/index.php/notimplemented">
-                            <i class="fa fa-bell fa-fw fa-lg"></i>
+                            <i class="fa fa-bell fa-fw"></i> Alerts
                         </a>
                     </li>    
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw fa-lg"></i><i class="fa fa-caret-down"></i>
+                            <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li><a href="{{app.request.basepath}}/index.php/notimplemented"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
@@ -76,7 +76,7 @@
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-navicon fa-fw fa-lg"></i>
+                            <i class="fa fa-navicon fa-fw"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li><a href="{{app.request.basepath}}/index.php/notimplemented"><i class="fa fa-tasks fa-fw"></i> Task management</a></li>
@@ -88,14 +88,13 @@
             </div>
 
         </nav>
-
-        <div class="container">
-            {% block content %}{% endblock %}
+        <div id="page-wrapper">
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
         </div>
-
     </div>
 
-    {% block javascripts %}{% endblock %}
     <!-- jQuery -->
     <script src="{{app.request.basepath}}/bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -110,7 +109,13 @@
     <script src="{{app.request.basepath}}/bower_components/raphael/raphael-min.js"></script>
     <script src="{{app.request.basepath}}/bower_components/morrisjs/morris.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="{{app.request.basepath}}/bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>  
+    <!-- Date picker component-->
+    <script src="{{app.request.basepath}}/bower_components/moment/min/moment.min.js"></script>    
+    <script src="{{app.request.basepath}}/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>    
+    
+    <!-- Worklog JavaScript -->
+    <script src="{{app.request.basepath}}/js/worklog.js"></script>
+    
+    {% block javascripts %}{% endblock %}
 </body>
 </html>

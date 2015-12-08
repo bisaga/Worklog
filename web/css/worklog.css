@@ -7,6 +7,66 @@ and open the template in the editor.
     Created on : 26.11.2015, 19:26:27
     Author     : igorb
 */
-body {
-    padding-top:65px;
+
+#wrapper {
+    width: 100%;
 }
+
+#page-wrapper {
+    padding: 0 15px;
+    padding-top: 10px;
+    min-height: 568px;
+    background-color: #fff;
+}
+
+.navbar-brand 
+{
+    line-height: inherit;
+    padding-top: 12px;
+}
+
+/* font icons center in the middle of the line height */
+.fa
+{ 
+    line-height: inherit;
+}
+
+.navbar-top-links {
+    margin-right: 0;
+}
+
+.navbar-top-links li {
+    display: inline-block;
+}
+
+.navbar-top-links li:last-child {
+    margin-right: 15px;
+}
+
+.navbar-top-links li a {
+    padding: 15px;
+    min-height: 50px;
+}
+
+.navbar-top-links .dropdown-menu li {
+    display: block;
+}
+
+.navbar-top-links .dropdown-menu li:last-child {
+    margin-right: 0;
+}
+
+.navbar-top-links .dropdown-menu li a {
+    padding: 3px 20px;
+    min-height: 0;
+}
+
+.navbar-top-links .dropdown-menu li a div {
+    white-space: normal;
+}
+
+/*
+@media(min-width:768px) {
+
+}
+*/
