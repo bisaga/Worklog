@@ -1,3 +1,8 @@
+/*
+ * The MIT License (MIT)
+ * Copyright (c) Bisaga
+ */
+
 var onResize = function() {
   // apply dynamic padding at the top of the body according to the fixed navbar height
   

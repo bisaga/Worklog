@@ -1,4 +1,8 @@
 <?php
+/*
+ * The MIT License (MIT)
+ * Copyright (c) Bisaga
+ */
 
 require_once __DIR__.'/../vendor/autoload.php'; 
 

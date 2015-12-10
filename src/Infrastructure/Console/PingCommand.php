@@ -1,4 +1,8 @@
 <?php
+/*
+ * The MIT License (MIT)
+ * Copyright (c) Bisaga
+ */
 
 namespace Bisaga\Infrastructure\Console;
 
