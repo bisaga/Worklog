@@ -36,6 +36,7 @@ class Application extends Silex\Application {
     private function createRoutes() {
         $this->get('/', 'Bisaga\Controller\DashboardController::show');
         $this->get('/workday', 'Bisaga\Controller\WorkdayController::show');
+        $this->post('/workday', 'Bisaga\Controller\WorkdayController::show');
         $this->get('/notimplemented', 'Bisaga\Controller\NotImplementedController::show');
     }
     
