@@ -8,12 +8,19 @@
 {% endblock %}
 
 {% block content %}   
-<div class="row">
+
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.workday) }}
+        {{ form_row(form.location) }}
+        {{ form_row(form.status) }}
+    {{ form_end(form) }}
+    
     <!--
-    <div class='col-sm-4 col-lg-3'>
+    <div class="row">   
+        <div class='col-sm-4 col-lg-3'>
         <div id="datetimepicker1"></div>
     </div>
-    -->
     <div class="col-sm-8 col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -28,7 +35,9 @@
     </div>
     <div class="col-sm-3">
     </div>    
-</div>
+
+    </div>
+    -->
 {% endblock %}
 
 {% block javascripts %}
