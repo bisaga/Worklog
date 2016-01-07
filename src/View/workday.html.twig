@@ -1,7 +1,7 @@
 {# Dashboard page #}
 {% extends "base.html.twig" %}
 
-{% block title %}Workday{% endblock %}
+{% block title %}{% endblock %}
 
 {% block head %}
     {{ parent() }}
@@ -9,13 +9,15 @@
 
 {% block content %}   
 <div class="row">
+    <!--
     <div class='col-sm-4 col-lg-3'>
         <div id="datetimepicker1"></div>
     </div>
+    -->
     <div class="col-sm-8 col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <div class="panel-title">{{name}}</div>
+                <div class="panel-title">{{title}}</div>
             </div>
             <div class="panel-body">
             </div>
@@ -32,10 +34,13 @@
 {% block javascripts %}
 <script type="text/javascript">
     $(function () {
+        /*
+        
         $('#datetimepicker1').datetimepicker({
                 inline: true,
                 format: 'MM/dd/YYYY'
                 });
+        */
     });
 </script>
 {% endblock %}

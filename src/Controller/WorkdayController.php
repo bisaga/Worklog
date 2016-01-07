@@ -8,22 +8,28 @@ namespace Bisaga\Controller;
 
 use Bisaga\Application;
 use Bisaga\Model\WorklogTable;
+use Bisaga\Form\WorkdayType;
+use Symfony\Component\HttpFoundation\Request;
 /**
  * @author igorb
  */
 class WorkdayController {
     
-    public function show(Application $app)
+    public function show(Request $request, Application $app)
     {
-        $name = "Workday"; 
-        $table = new WorklogTable();
-        $workdate = new \DateTime();
-        $table->setWorkDate($workdate);
+        $calendar = null;
+        $form = $app['form.factory']->create(new WorkdayType(), $calendar);
+        if($request->isMethod('POST')) 
+        {
         
-        /* @var $workday \Bisaga\Service\WorkdayService */
-        $workday = $app->getService('workday');
-        $workday->save($table);
+        }
         
-        return $app->render('workday.html.twig', array('name'=>$name));
+        $data = array(
+            'form' => $form->createView(),
+            'title' => 'Calendar day',
+        );
+        
+        return $app->render('workday.html.twig', $data);
+        
     }
 }

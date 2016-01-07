@@ -6,14 +6,18 @@
 
 namespace Bisaga;
 
+use Silex;
 use Silex\Provider\DoctrineServiceProvider;
+use Silex\Provider\FormServiceProvider;
+use Silex\Provider\TwigServiceProvider;
+use Bisaga\Service\WorkdayService;
 
 /**
  * Description of Application
  *
  * @author igorb
  */
-class Application extends Infrastructure\Core\ApplicationBase {
+class Application extends Silex\Application {
     use \Silex\Application\TwigTrait;
     
     public function __construct(array $values = array()) {
@@ -21,6 +25,9 @@ class Application extends Infrastructure\Core\ApplicationBase {
     }
     
     public function initialize() {
+        // Timezone.
+        date_default_timezone_set('Europe/Ljubljana');        
+        
         $this->registerServices();
         $this->createRoutes();
     }
@@ -48,16 +55,16 @@ class Application extends Infrastructure\Core\ApplicationBase {
                     )
                 ));
 
-        $this->register(new \Silex\Provider\TwigServiceProvider(), array (
-                        'twig.path' => __DIR__.'\Views',
+        $this->register(new TwigServiceProvider(), array (
+                        'twig.path' => __DIR__.'\View',
                 ));
 
+        $this->register(new FormServiceProvider());
+        
         // custom Workday service 
-        $this->setService(
-                'workday', 
-                $this->share( function($app) {
-                    return new Service\WorkdayService($app['db']);
-                }));
+        $this['workday'] = $this->share( function($app) {
+                    return new WorkdayService($app['db']);
+                });
     }
 
 }

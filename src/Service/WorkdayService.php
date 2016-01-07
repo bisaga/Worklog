@@ -25,6 +25,5 @@ class WorkdayService extends ServiceBase {
         $stmt = $cn->createQueryBuilder();
         $stmt->insert(WorklogTable::Table);
         $cn->commit();
-    }
-    
+    }   
 }
