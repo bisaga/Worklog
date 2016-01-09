@@ -2,3 +2,4 @@
 /composer.lock
 /vendor/
 /web/bower_components/
+/app/cache/

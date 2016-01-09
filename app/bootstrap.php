@@ -20,9 +20,9 @@ return call_user_func(
         // debug mode enabled 
         $app['debug'] = true;
         
-        // debug mode disabled 
-        //$app['debug'] = false;
-        
+        // twig cache folder 
+        $app['twig.options.cache'] = __DIR__.'/cache/twig';
+ 
         $app->initialize();
  
         return $app;

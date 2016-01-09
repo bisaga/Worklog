@@ -59,12 +59,12 @@ class Application extends Silex\Application {
 
         $this->register(new TwigServiceProvider(), array (
                         'twig.options' => array(
-                            'cache' => isset($app['twig.options.cache']) ? $app['twig.options.cache'] : false,
+                            'cache' => isset($this['twig.options.cache']) ? $this['twig.options.cache'] : false,
                             'strict_variables' => true,
                         ),
                         'twig.form.templates' => array('form_div_layout.html.twig', 'Common/form_div_layout.html.twig'),
             
-                        'twig.path' => __DIR__.'\View',
+                        'twig.path' => __DIR__.'/View',
                 ));
 
         $this->register(new FormServiceProvider());
