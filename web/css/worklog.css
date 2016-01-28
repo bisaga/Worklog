@@ -7,16 +7,28 @@ and open the template in the editor.
     Created on : 26.11.2015, 19:26:27
     Author     : igorb
 */
+body
+{
+    padding-top: 50px;
+}
+
 
 #wrapper {
     width: 100%;
 }
+.toolbarline
+{   
+    background-color: #F8F8F8;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
 
-#page-wrapper {
-    padding: 0 15px;
-    padding-top: 10px;
-    min-height: 568px;
-    background-color: #fff;
+.container
+{
+    padding-top: 5px;
 }
 
 .navbar-brand 
@@ -65,8 +77,4 @@ and open the template in the editor.
     white-space: normal;
 }
 
-/*
-@media(min-width:768px) {
 
-}
-*/

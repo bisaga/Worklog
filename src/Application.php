@@ -65,6 +65,7 @@ class Application extends Silex\Application {
                         'twig.form.templates' => array('form_div_layout.html.twig', 'Common/form_div_layout.html.twig'),
             
                         'twig.path' => __DIR__.'/View',
+            
                 ));
 
         $this->register(new FormServiceProvider());

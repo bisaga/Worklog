@@ -17,16 +17,17 @@ class WorkdayController {
     
     public function show(Request $request, Application $app)
     {
-        $calendar = null;
-        $form = $app['form.factory']->create(new WorkdayType(), $calendar);
+        /* @var $formType WorkdayType */    
+        $formType = $app['form.factory']->create(new WorkdayType());
         if($request->isMethod('POST')) 
         {
-        
+            
         }
-        
+        $selectedDate = date("l, j/F/Y");
         $data = array(
-            'form' => $form->createView(),
-            'title' => 'Calendar day',
+            'form' => $formType->createView(),
+            'selectedDate' => $selectedDate,
+            'title' => 'Workday',
         );
         
         return $app->render('workday.html.twig', $data);
