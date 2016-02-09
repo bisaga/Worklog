@@ -24,11 +24,11 @@ class WorkdayController {
             
         }
         $selectedDate = date("l, j/F/Y");
-        $data = array(
+        $data = [
             'form' => $formType->createView(),
             'selectedDate' => $selectedDate,
             'title' => 'Workday',
-        );
+        ];
         
         return $app->render('workday.html.twig', $data);
         
