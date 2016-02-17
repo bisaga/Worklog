@@ -8,7 +8,6 @@ namespace Bisaga;
 
 use Silex;
 use Silex\Provider\DoctrineServiceProvider;
-use Silex\Provider\FormServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Bisaga\Service\WorkdayService;
@@ -38,6 +37,8 @@ class Application extends Silex\Application {
         $this->get('/workday', 'Bisaga\Controller\WorkdayController::show');
         $this->post('/workday', 'Bisaga\Controller\WorkdayController::show');
         $this->get('/notimplemented', 'Bisaga\Controller\NotImplementedController::show');
+        $this->get('/person', 'Bisaga\Controller\PersonController::show');
+        $this->get('/personData', 'Bisaga\Controller\PersonController::getData');
     }
     
     private function registerServices() {
@@ -62,13 +63,9 @@ class Application extends Silex\Application {
                             'cache' => isset($this['twig.options.cache']) ? $this['twig.options.cache'] : false,
                             'strict_variables' => true,
                         ),
-                        'twig.form.templates' => array('form_div_layout.html.twig', 'Common/form_div_layout.html.twig'),
-            
                         'twig.path' => __DIR__.'/View',
-            
                 ));
 
-        $this->register(new FormServiceProvider());
         $this->register(new TranslationServiceProvider());
         
         // custom Workday service 

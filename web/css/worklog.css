@@ -7,15 +7,19 @@ and open the template in the editor.
     Created on : 26.11.2015, 19:26:27
     Author     : igorb
 */
-body
+.body
 {
-    padding-top: 50px;
+    padding-top: 0;
 }
-
+.navbar
+{
+    margin-bottom: 0;
+}
 
 #wrapper {
     width: 100%;
 }
+
 .toolbarline
 {   
     background-color: #F8F8F8;

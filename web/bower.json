@@ -15,7 +15,9 @@
     "tests"
   ],
   "dependencies": {
-    "startbootstrap-sb-admin-2": "~1.0.7",
-    "eonasdan-bootstrap-datetimepicker": "~4.17.37"
+    "jquery": "2.1.4",
+    "bootstrap": "~3.3.6",
+    "w2ui": "~1.4.3",
+    "font-awesome": "latest"
   }
 }

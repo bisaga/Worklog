@@ -12,10 +12,7 @@
         "symfony/twig-bridge": "^2.7",
         "symfony/console": "^2.7",
         "symfony/translation": "^2.7",
-        "symfony/form": "^2.7",
-        "doctrine/migrations": "^1.1",
-        "symfony/validator": "^3.0",
-        "symfony/security-csrf": "^3.0"     
+        "doctrine/migrations": "^1.1"
     },
     "autoload": {
         "psr-4" : {

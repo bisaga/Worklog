@@ -1,6 +1,3 @@
-{# Bootstrap form theme #}
-{% form_theme form 'bootstrap_3_layout.html.twig' %}    
-
 {# Dashboard page #}
 {% extends "base.html.twig" %}
 
@@ -19,58 +16,8 @@
 {% endblock %}
 
 {% block content %}
-{{ form_start(form, {'attr':{'autocomplete':'off'}}) }}
-    <div class="form-group row">   
-        <div class="col-sm-12">
-            {{ form_errors(form) }}
-        </div>
-    <div>
-    <div class="form-group row">   
-        <div class="col-sm-2">
-        {{ form_row(form.starttime) }}
-        </div>
-        <div class="col-sm-6">
-        {{ form_row(form.location)}}
-        </div>
-        <div class="col-sm-2">
-        {{ form_row(form.endtime)}}
-        </div>
-        <div class="col-sm-2">
-        {{ form_row(form.status)}}
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-2">
-        {{ form_row(form.fromtime) }}
-        </div>
-        <div class="col-sm-2">
-        {{ form_row(form.totime) }}
-        </div>
-        <div class="col-sm-3">
-        {{ form_row(form.logtime) }}
-        </div>
-        <div class="col-sm-5">
-        {{ form_row(form.taskcode) }}
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-12">
-            {{ form_row(form.description)}}
-        </div>    
-    </div>    
-    <div>
-    {{ form_row(form.save)}}
-    </div>
-    {{ form_end(form) }}
+    <h2>{{ title }}</h2>
 {% endblock %}
 
 {% block javascripts %}
-<script type="text/javascript">
-    $(function () {
-        /*
-        $('#workday_workday').datetimepicker({
-                });
-        */
-    });
-</script>
 {% endblock %}
