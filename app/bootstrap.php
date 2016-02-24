@@ -10,6 +10,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 // Do bootstrapping within a new local scope to avoid polluting the global
 return call_user_func(
     function () {
+
+        define("ROOT", __DIR__ . "/../");
         
         // Use UTF-8 for all multi-byte functions
         mb_internal_encoding('UTF-8');

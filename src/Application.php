@@ -34,14 +34,19 @@ class Application extends Silex\Application {
 
     private function createRoutes() {
         $this->get('/', 'Bisaga\Controller\DashboardController::show');
-        $this->get('/workday', 'Bisaga\Controller\WorkdayController::show');
+        $this->get('/workday', 'Bisaga\Controller\WorkdayController::show')->bind('workday');
         $this->post('/workday', 'Bisaga\Controller\WorkdayController::show');
-        $this->get('/notimplemented', 'Bisaga\Controller\NotImplementedController::show');
+        $this->get('/notimplemented', 'Bisaga\Controller\NotImplementedController::show')->bind('notimplemented');
         $this->get('/person', 'Bisaga\Controller\PersonController::show');
         $this->get('/personData', 'Bisaga\Controller\PersonController::getData');
+        $this->get('/locale/{file_path_name}', 'Bisaga\Controller\LocaleController::getFile');
     }
     
     private function registerServices() {
+
+        // URL generator service
+        $this->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
         // Doctrine DBAL database access provider 
         $this->register(new DoctrineServiceProvider(), array(
                     'db.options' => array(
