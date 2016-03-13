@@ -16,6 +16,15 @@
 {% endblock %}
 
 {% block content %}
+    <div id="title" class="h2">Workday:<b>{{ selectedDate }}</b> </div>
+    <div id="formDay" style="width:100%;">
+        <div class="w2ui-page page-0">
+            <div class="w2ui-field">
+                <label>Change date:</label>
+                <div><input name="selectedDate"></div>
+            </div>
+        </div>
+    </div>
     <div id="gridDay" style="width:100%; height:250px;"></div>
 {% endblock %}
 

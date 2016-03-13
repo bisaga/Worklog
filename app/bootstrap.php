@@ -16,9 +16,14 @@ return call_user_func(
         // Use UTF-8 for all multi-byte functions
         mb_internal_encoding('UTF-8');
         mb_http_output('UTF-8');
-        
-        $app = new Bisaga\Application(); 
-        
+
+        date_default_timezone_set("Europe/Ljubljana");
+
+        $app = new Bisaga\Application();
+
+        // show errors
+        ini_set('display_errors', 'On');
+
         // debug mode enabled 
         $app['debug'] = true;
         

@@ -5,6 +5,8 @@
  */
 namespace Bisaga\Model;
 
+use DateTime;
+
 /**
  * Table WorklogTable
  *
@@ -16,9 +18,39 @@ class WorklogTable {
     public function __construct() {
     }
 
-    const Id = "id";
-    /* @var $id int*/
+    /* @var int $id */
     private $id;
+    const Id = "id";
+
+    /* @var DateTime $workdate */
+    private $workdate;
+    const WorkDate = "workdate";
+
+    /* @var string $location */
+    private $location;
+    const Location = "location";
+
+    /* @var float $milage */
+    private $mileage;
+    const Mileage = "mileage";
+
+    /* @var float $starttime */
+    private $starttime;
+    const StartTime = "starttime";
+
+    /* @var float $endtime */
+    private $endtime;
+    const EndTime = "endtime";
+
+    /* @var float $totaltime */
+    private $totaltime;
+    const TotalTime = "totaltime";
+
+    /* @var string $status */
+    private $status;
+    const Status = "status";
+
+
     /**
      * Id
      * @return int
@@ -37,30 +69,24 @@ class WorklogTable {
     }
     
     
-    const WorkDate = "workdate";
-    /* @var $workDate DateTime */
-    private $workDate;
     /**
      * WorkDate
      * @return DateTime
      */
-    public function getWorkDate()
+    public function getWorkdate()
     {
-        return $this->workDate;
+        return $this->workdate;
     }
     /**
      * WorkDate
-     * @param DateTime $workDate
+     * @param DateTime $workdate
      */
-    public function setWorkDate($workDate)
+    public function setWorkdate($workdate)
     {
-        $this->workDate = $workDate;
+        $this->workdate = $workdate;
     }
     
     
-    const Location = "location";
-    /* @var $location string */
-    private $location;
     /**
      * Location
      * @return string
@@ -79,90 +105,75 @@ class WorklogTable {
     }
     
     
-    const Milage = "milage";
-    /* @var $milage float */
-    private $milage;
     /**
      * Milage
      * @return float
      */
-    public function getMilage()
+    public function getMileage()
     {
-        return $this->milage;
+        return $this->mileage;
     }
     /**
-     * Milage
-     * @param float $milage
+     * Mileage
+     * @param float $mileage
      */
-    public function setMilage($milage)  
+    public function setMileage($mileage)
     {
-        $this->milage = $milage;
+        $this->mileage = $mileage;
     }
     
-    const StartTime = "starttime";
-    /* @var $startTime float */
-    private $startTime;
     /**
      * Start time 
      * @return float
      */
-    public function getStartTime()
+    public function getStarttime()
     {
-        return $this->startTime;
+        return $this->starttime;
     }
     /**
      * Start time
-     * @param float $startTime
+     * @param float $starttime
      */
-    public function setStartTime($startTime)  
+    public function setStarttime($starttime)  
     {
-        $this->startTime = $startTime;
+        $this->starttime = $starttime;
     }
     
-    const EndTime = "endtime";
-    /* @var $endTime float */
-    private $endTime;
     /**
      * End time 
      * @return float
      */
-    public function getEndTime()
+    public function getEndtime()
     {
-        return $this->endTime;
+        return $this->endtime;
     }
     /**
      * End time
-     * @param float $endTime
+     * @param float $endtime
      */
-    public function setEndTime($endTime)  
+    public function setEndtime($endtime)  
     {
-        $this->endTime = $endTime;
+        $this->endtime = $endtime;
     }
 
-    const TotalTime = "totaltime";
-    /* @var $totalTime float */
-    private $totalTime;
     /**
      * Total time 
      * @return float
      */
-    public function getTotalTime()
+    public function getTotaltime()
     {
-        return $this->totalTime;
+        return $this->totaltime;
     }
     /**
      * Total time
-     * @param float $totalTime
+     * @param float $totaltime
      */
-    public function setTotalTime($totalTime)  
+    public function setTotaltime($totaltime)
     {
-        $this->totalTime = $totalTime;
+        $this->totaltime = $totaltime;
     }
     
     
-    const Status = "status";
-    /* @var $status string*/
-    private $status;
     /**
      * Status
      * @return string

@@ -16,7 +16,146 @@ class WorklogLine {
     
     public function __construct() {
     }
-    
-    
-    
+
+    /** @var integer */
+    private $id;
+    const Id = "id";
+
+    /** @var integer */
+    private $worklogid;
+    const WorklogId = "worklogid";
+
+    /**@var string */
+    private $fromtime;
+    const FromTime = "fromtime";
+
+    /**@var string */
+    private $totime;
+    const ToTime = "totime";
+
+    /**@var string */
+    private $logtime;
+    const LogTime = "logtime";
+
+    /**@var string */
+    private $description;
+    const Description = "description";
+
+    /**@var string */
+    private $taskcode;
+    const TaskCode = "taskcode";
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWorklogid()
+    {
+        return $this->worklogid;
+    }
+
+    /**
+     * @param int $worklogid
+     */
+    public function setWorklogid($worklogid)
+    {
+        $this->worklogid = $worklogid;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFromtime()
+    {
+        return $this->fromtime;
+    }
+
+    /**
+     * @param string $fromtime
+     */
+    public function setFromtime($fromtime)
+    {
+        $this->fromtime = $fromtime;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTotime()
+    {
+        return $this->totime;
+    }
+
+    /**
+     * @param string $totime
+     */
+    public function setTotime($totime)
+    {
+        $this->totime = $totime;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogtime()
+    {
+        return $this->logtime;
+    }
+
+    /**
+     * @param string $logtime
+     */
+    public function setLogtime($logtime)
+    {
+        $this->logtime = $logtime;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTaskcode()
+    {
+        return $this->taskcode;
+    }
+
+    /**
+     * @param string $taskcode
+     */
+    public function setTaskcode($taskcode)
+    {
+        $this->taskcode = $taskcode;
+    }
+
+
 }

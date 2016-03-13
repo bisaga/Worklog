@@ -11,6 +11,7 @@ use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Bisaga\Service\WorkdayService;
+use Bisaga\Service\WorkdayGridService;
 
 /**
  * Description of Application
@@ -35,7 +36,8 @@ class Application extends Silex\Application {
     private function createRoutes() {
         $this->get('/', 'Bisaga\Controller\DashboardController::show');
         $this->get('/workday', 'Bisaga\Controller\WorkdayController::show')->bind('workday');
-        $this->post('/workday', 'Bisaga\Controller\WorkdayController::show');
+        $this->post('/workday_grid', 'Bisaga\Controller\WorkdayController::grid');
+        $this->post('/workday_form', 'Bisaga\Controller\WorkdayController::form');
         $this->get('/notimplemented', 'Bisaga\Controller\NotImplementedController::show')->bind('notimplemented');
         $this->get('/person', 'Bisaga\Controller\PersonController::show');
         $this->get('/personData', 'Bisaga\Controller\PersonController::getData');
@@ -77,6 +79,12 @@ class Application extends Silex\Application {
         $this['workday'] = $this->share( function($app) {
                     return new WorkdayService($app['db']);
                 });
+
+        // custom Workday grid service
+        $this['workdayGrid'] = $this->share( function($app) {
+            return new WorkdayGridService($app['db']);
+        });
+
     }
 
 }

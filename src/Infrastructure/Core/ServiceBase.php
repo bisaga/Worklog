@@ -10,7 +10,7 @@ namespace Bisaga\Infrastructure\Core;
  * @author igorb
  */
 class ServiceBase {
-    /* @var $db \Doctrine\DBAL\Connection */
+    /** @var \Doctrine\DBAL\Connection $db */
     private $db;
     
     /**

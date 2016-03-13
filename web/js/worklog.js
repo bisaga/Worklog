@@ -4,5 +4,5 @@
  */
 
 $(function() {
-    w2utils.locale('locale/sl-si.json');
+    w2utils.locale('./locale/sl-si.json');
 });

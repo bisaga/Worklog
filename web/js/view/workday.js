@@ -9,27 +9,54 @@
 var config = {
     gridDay: {
         name: 'gridDay',
+        url:'./workday_grid',
+
+        postData: {
+            selectedDate: '',
+            showCount: false
+        },
+
         show: {
             toolbar:true,
             lineNumbers: true
         },
 
         columns: [
-            {field: 'recid', caption:'Id', size: '50px', sortable: true, resizable: true},
-            {field: 'timeFrom', caption:'From', size: '70px', sortable: true, resizable: true, editable: {type:"time", format: 'h24'} },
-            {field: 'timeTo', caption:'To', size: '70px', sortable: true, resizable: true , editable: {type:"time", format: 'h24'} },
-            {field: 'time', caption:'Time', size: '70px', sortable: true, resizable: true , editable: {type:"time", format: 'h24'} },
-            {field: 'task', caption:'Task', size: '130px', sortable: true, resizable: true },
-            {field: 'desc', caption:'Description', size: '250px', sortable: true, resizable: true }
-        ],
-
-        records: [
-            { recid: 1,  task: "LJGENISUDEV-103", desc:"Prilagoditev design-a SSRS reporta"}
+            {field: 'id', caption:'Id', size: '50px', sortable: true, resizable: true},
+            {field: 'fromtime', caption:'From', size: '70px', sortable: true, resizable: true, render:'time:h24', editable: {type:"time", format: 'h24'} },
+            {field: 'totime', caption:'To', size: '70px', sortable: true, resizable: true , render:'time:h24', editable: {type:"time", format: 'h24'} },
+            {field: 'logtime', caption:'Time', size: '70px', sortable: true, resizable: true , render:'time:h24', editable: {type:"time", format: 'h24'} },
+            {field: 'taskcode', caption:'Task', size: '130px', sortable: true, resizable: true },
+            {field: 'description', caption:'Description', size: '250px', sortable: true, resizable: true }
         ]
+
+    },
+    formDay: {
+        name: 'formDay',
+        url: './workday_form',
+        recid: 1,   // trigger loading data
+        fields: [
+            {name: 'selectedDate', type: 'date'}
+        ],
+        onChange: function (event) {
+            event.onComplete = function () {
+                onSelectedDateChange(event);
+            }
+        }
 
     }
 };
 
+function onSelectedDateChange(event)
+{
+    if(event.type == 'change' && event.target == 'selectedDate')
+    {
+        w2ui.gridDay.postData.selectedDate = event.value_new;
+        w2ui.gridDay.reload();
+    }
+}
+
 $(function() {
-    $("#gridDay").w2grid(config.gridDay);
+    $("#formDay").w2form(config.formDay);
+    $('#gridDay').w2grid(config.gridDay);
 });
