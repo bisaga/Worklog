@@ -16,13 +16,38 @@
 {% endblock %}
 
 {% block content %}
-    <div id="title" class="h2">Workday:<b>{{ selectedDate }}</b> </div>
-    <div id="formDay" style="width:100%;">
-        <div class="w2ui-page page-0">
-            <div class="w2ui-field">
-                <label>Change date:</label>
-                <div><input name="selectedDate"></div>
-            </div>
+    <div id="dateBar" class="dateBar">
+        <table style="width:100%" class="dateBar">
+            <tr>
+                <td>Workday</td>
+                <td><div id="dateTitle" style="text-align: right">{{ selectedDate }}</div></td>
+            </tr>
+        </table>
+    </div>
+    <div id="formDay" style="width:100%;" class="workdayForm">
+        <div style="padding: 0px;">
+            <table>
+                <tr>
+                    <td>
+                        <div class="workdayForm label">Date:</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <div class="workdayForm input"> <input name="selectedDate"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="workdayForm label">From:</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="workdayForm input"> <input name="startTime"></div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
     <div id="gridDay" style="width:100%; height:250px;"></div>

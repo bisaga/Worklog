@@ -36,7 +36,8 @@ var config = {
         url: './workday_form',
         recid: 1,   // trigger loading data
         fields: [
-            {name: 'selectedDate', type: 'date'}
+            {name: 'selectedDate', type: 'date'},
+            {name: 'startTime', type: 'time'}
         ],
         onChange: function (event) {
             event.onComplete = function () {
@@ -53,6 +54,10 @@ function onSelectedDateChange(event)
     {
         w2ui.gridDay.postData.selectedDate = event.value_new;
         w2ui.gridDay.reload();
+        w2ui.gridDay.focus();
+
+        // change title date
+        $("#dateTitle").text(event.value_new);
     }
 }
 
