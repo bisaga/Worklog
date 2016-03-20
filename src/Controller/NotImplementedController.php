@@ -15,6 +15,6 @@ class NotImplementedController
     public function show(Application $app, Request $request)
     {
         $name = "This page is not implemented. Yet.";
-        return $app->render('notimplemented.html.twig', array('name'=>$name));
+        return $app->render('notimplemented.html.php', array('name'=>$name));
     }
 }

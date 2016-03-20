@@ -8,19 +8,18 @@ namespace Bisaga;
 
 use Silex;
 use Silex\Provider\DoctrineServiceProvider;
-use Silex\Provider\TwigServiceProvider;
-use Silex\Provider\TranslationServiceProvider;
 use Bisaga\Service\WorkdayService;
 use Bisaga\Service\WorkdayGridService;
-
+use Bisaga\Infrastructure\Core\ViewService;
 /**
  * Description of Application
  *
  * @author igorb
  */
 class Application extends Silex\Application {
-    use \Silex\Application\TwigTrait;
-    
+    private $VIEW_DIR;
+
+
     public function __construct(array $values = array()) {
         parent::__construct($values);
     }
@@ -31,6 +30,13 @@ class Application extends Silex\Application {
         
         $this->registerServices();
         $this->createRoutes();
+
+        //setup import view path
+        $this['view_dir'] = __DIR__.'/View';
+
+        // debug mode enabled
+        $this['debug'] = true;
+
     }
 
     private function createRoutes() {
@@ -65,16 +71,11 @@ class Application extends Silex\Application {
                     )
                 ));
 
-        $this->register(new TwigServiceProvider(), array (
-                        'twig.options' => array(
-                            'cache' => isset($this['twig.options.cache']) ? $this['twig.options.cache'] : false,
-                            'strict_variables' => true,
-                        ),
-                        'twig.path' => __DIR__.'/View',
-                ));
+        // custom Workday service
+        $this['view'] = $this->share( function($app) {
+            return new ViewService($app);
+        });
 
-        $this->register(new TranslationServiceProvider());
-        
         // custom Workday service 
         $this['workday'] = $this->share( function($app) {
                     return new WorkdayService($app['db']);
@@ -86,5 +87,11 @@ class Application extends Silex\Application {
         });
 
     }
+
+    public function render($file, $vars)
+    {
+        return $this['view']->render($file, $vars);
+    }
+
 
 }

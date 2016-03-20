@@ -37,7 +37,8 @@ var config = {
         recid: 1,   // trigger loading data
         fields: [
             {name: 'selectedDate', type: 'date'},
-            {name: 'startTime', type: 'time'}
+            {name: 'startTime', type: 'time'},
+            {name: 'endTime', type: 'time'}
         ],
         onChange: function (event) {
             event.onComplete = function () {

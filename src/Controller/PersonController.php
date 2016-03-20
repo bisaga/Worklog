@@ -10,8 +10,8 @@ class PersonController
 
     public function show(Application $app, Request $request)
     {
-        $gridTitle = "Persons";
-        return $app->render('person.html.twig', array('gridTitle'=>$gridTitle));
+        $gridTitle = "Persons title";
+        return $app->render('person.html.php', null);
     }
 
     public function getData(Application $app)

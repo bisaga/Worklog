@@ -26,7 +26,7 @@ class WorkdayController {
             'selectedDate' => $this->getSelectedDate()->format('d.m.Y')
         ];
         
-        return $app->render('workday.html.twig', $data);
+        return $app->render('workday.html.php', $data);
         
     }
 
@@ -42,7 +42,7 @@ class WorkdayController {
     {
         $data = "{status:'success', record: {'selectedDate': '".
             $this->getSelectedDate()->format('d.m.Y')
-            ."', recid:'1'}}";
+            ."', startTime:'0:00', endTime:'0:00', recid:'1'}}";
         return $data;
     }
 
