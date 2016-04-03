@@ -15,7 +15,7 @@
 
     <!-- W2UI -->
     <!--<link rel="stylesheet" type="text/css" href="{{app.request.basepath}}/bower_components/w2ui/w2ui-1.4.3.min.css" />-->
-    <link rel="stylesheet" type="text/css" href="w2ui/w2ui.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="w2ui/dist/w2ui-light.css" id="mainCSS" />
 
     <!-- Worklog custom CSS -->
     <link rel="stylesheet" href="css/worklog.css" />

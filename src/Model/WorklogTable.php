@@ -26,10 +26,6 @@ class WorklogTable {
     private $workdate;
     const WorkDate = "workdate";
 
-    /* @var string $location */
-    private $location;
-    const Location = "location";
-
     /* @var float $milage */
     private $mileage;
     const Mileage = "mileage";
@@ -86,23 +82,6 @@ class WorklogTable {
         $this->workdate = $workdate;
     }
     
-    
-    /**
-     * Location
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-    /**
-     * Set location
-     * @param string $location
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
-    }
     
     
     /**

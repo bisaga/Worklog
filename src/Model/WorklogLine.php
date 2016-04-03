@@ -45,6 +45,14 @@ class WorklogLine {
     private $taskcode;
     const TaskCode = "taskcode";
 
+    /* @var string $location */
+    private $location;
+    const Location = "location";
+
+    /* @var float $milage */
+    private $mileage;
+    const Mileage = "mileage";
+
     /**
      * @return int
      */
@@ -157,5 +165,39 @@ class WorklogLine {
         $this->taskcode = $taskcode;
     }
 
+    /**
+     * Location
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+    /**
+     * Set location
+     * @param string $location
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
+
+
+    /**
+     * Milage
+     * @return float
+     */
+    public function getMileage()
+    {
+        return $this->mileage;
+    }
+    /**
+     * Mileage
+     * @param float $mileage
+     */
+    public function setMileage($mileage)
+    {
+        $this->mileage = $mileage;
+    }
 
 }

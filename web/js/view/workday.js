@@ -20,7 +20,6 @@ var config = {
             toolbar:true,
             lineNumbers: true
         },
-
         columns: [
             {field: 'id', caption:'Id', size: '50px', sortable: true, resizable: true},
             {field: 'fromtime', caption:'From', size: '70px', sortable: true, resizable: true, render:'time:h24', editable: {type:"time", format: 'h24'} },
@@ -29,8 +28,8 @@ var config = {
             {field: 'taskcode', caption:'Task', size: '130px', sortable: true, resizable: true },
             {field: 'description', caption:'Description', size: '250px', sortable: true, resizable: true }
         ]
-
     },
+
     formDay: {
         name: 'formDay',
         url: './workday_form',
@@ -42,27 +41,47 @@ var config = {
         ],
         onChange: function (event) {
             event.onComplete = function () {
-                onSelectedDateChange(event);
+                workdayForm.onSelectedDateChange(event);
             }
         }
 
     }
+
 };
 
-function onSelectedDateChange(event)
-{
-    if(event.type == 'change' && event.target == 'selectedDate')
+var workdayForm = {
+    onSelectedDateChange: function(event)
     {
-        w2ui.gridDay.postData.selectedDate = event.value_new;
-        w2ui.gridDay.reload();
-        w2ui.gridDay.focus();
+        if(event.type == 'change' && event.target == 'selectedDate')
+        {
+            w2ui.gridDay.postData.selectedDate = event.value_new;
+            w2ui.gridDay.reload();
+            w2ui.gridDay.focus();
 
-        // change title date
-        $("#dateTitle").text(event.value_new);
+            // change title date
+            //$("#dateTitle").text(event.value_new);
+        }
+    },
+
+    onAddNew: function() {
+        window.alert("That is !");
     }
 }
 
 $(function() {
-    $("#formDay").w2form(config.formDay);
+    $('#selectedDate').w2field('date', {
+        onChange: function (event) {
+            workdayForm.onSelectedDateChange(event);
+        }
+    });
+
+    $('#startTime').w2field('time');
+    $('#endTime').w2field('time');
+
     $('#gridDay').w2grid(config.gridDay);
+
+    $('#addNew').click(function() {
+        workdayForm.onAddNew();
+    });
+
 });

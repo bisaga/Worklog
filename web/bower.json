@@ -18,6 +18,9 @@
     "jquery": "2.1.4",
     "bootstrap": "~3.3.6",
     "w2ui": "~1.4.3",
-    "font-awesome": "latest"
+    "font-awesome": "latest",
+    "datatables.net": "~1.10.11",
+    "datatables.net-dt": "~1.10.11",
+    "ag-grid": "^4.0.5"
   }
 }

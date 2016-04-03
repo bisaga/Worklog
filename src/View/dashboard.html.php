@@ -4,7 +4,7 @@
 <?php $view->import('navigate.html.php') ?>
 
 <div class="container">
-<h1>HELLO WORLD from: <?php echo $title ?></h1>
+<h1><?php echo $title ?></h1>
 </div>
 
 <?php $view->import('script.html.php') ?>

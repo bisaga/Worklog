@@ -2,5 +2,7 @@
 /composer.lock
 /vendor/
 /web/bower_components/
+/web/w2ui/
 /app/cache/
 /.idea/
+ideas.txt
