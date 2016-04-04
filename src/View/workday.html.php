@@ -1,6 +1,11 @@
 <html>
-<?php $this->import('head.html.php') ?>
+<head>
+    <?php $this->import('head.html.php') ?>
+</head>    
+<body>
+
 <?php $this->import('navigate.html.php') ?>
+
 <div class="toolbarline">
     <button id="addNew" class="btn btn-default">Add new</button>
 </div>

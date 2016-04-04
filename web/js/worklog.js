@@ -4,5 +4,4 @@
  */
 
 $(function() {
-    w2utils.locale('./w2ui/src/locale/sl-si.json');
 });

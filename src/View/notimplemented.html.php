@@ -1,5 +1,7 @@
 <html>
-<?php $this->import('head.html.php') ?>
+<head>
+    <?php $this->import('head.html.php') ?>
+</head>
 <body>
 <?php $this->import('navigate.html.php') ?>
 

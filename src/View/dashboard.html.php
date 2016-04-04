@@ -1,5 +1,7 @@
 <html>
-<?php $view->import('head.html.php') ?>
+<head>
+    <?php $view->import('head.html.php') ?>
+</head>
 <body>
 <?php $view->import('navigate.html.php') ?>
 

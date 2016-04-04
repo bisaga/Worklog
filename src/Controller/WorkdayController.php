@@ -12,14 +12,14 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @author igorb
- */
+ */ 
 class WorkdayController {
     
     public function show(Request $request, Application $app)
     {
         if($request->isMethod('POST'))
         {
-            
+            //$request->         
         }
         $data = [
             'title' => 'Workday',
@@ -27,7 +27,6 @@ class WorkdayController {
         ];
         
         return $app->render('workday.html.php', $data);
-        
     }
 
     /**
