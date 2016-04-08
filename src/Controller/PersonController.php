@@ -17,7 +17,7 @@ class PersonController
     public function getData(Application $app)
     {
         return $app->json([
-            ['lastName' => uniqid(), 'name' => "Al", 'checked' => true, 'linkText' => "www.sap.com", 'href' => "http://www.sap.com", 'gender' => "male", 'rating' => 4, 'src' => "images/person1.gif"],
+            ['lastName' => uniqid(), 'name' => "Al", 'checked' => true, 'linkText' => "www.sap.com", 'href' => "http://www.sap.com/extra_long_address_to_see_how_columns_will_react_to_large_content.", 'gender' => "male", 'rating' => 4, 'src' => "images/person1.gif"],
             ['lastName' => "Friese", 'name' => "Andy", 'checked' => true, 'linkText' => "www.sap.com", 'href' => "http://www.sap.com", 'gender' => "male", 'rating' => 2, 'src' => "images/person1.gif"],
             ['lastName' => "Mann", 'name' => "Anita", 'checked' => false, 'linkText' => "www.sap.com", 'href' => "http://www.sap.com", 'gender' => "female", 'rating' => 3, 'src' => "images/person1.gif"],
             ['lastName' => "Schutt", 'name' => "Doris", 'checked' => true, 'linkText' => "www.sap.com", 'href' => "http://www.sap.com", 'gender' => "female", 'rating' => 4, 'src' => "images/person1.gif"],

@@ -11,7 +11,7 @@
     <div class="row">
         <h4><b>Persons</b></h4>
         <div id="content" style="padding: 10px">
-            <div id="myGrid" class="ag-bootstrap-striped" style="width:500px; height:250px;"></div>
+            <div id="myGrid" class="ag-bootstrap-striped" style="width:100%; height:500px;"></div>
         </div>
     </div>
 </div>
