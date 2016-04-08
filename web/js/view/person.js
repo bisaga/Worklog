@@ -47,6 +47,20 @@ $(function() {
         console.log(selectedName);
     };
 
+    function reloadData()
+    {
+        $.ajax({
+            type: 'GET',
+            url: '/personData',
+            success: function (data) {
+                setRowData(data);
+            },
+            error: function () {
+                console.log("Error ajax request.");
+            }
+        });
+    };
+
     function setRowData(allOfTheData) {
         var dataSource = {
             rowCount: null, // behave as infinite scroll
@@ -78,16 +92,14 @@ $(function() {
 
     // call function instead of create object
     agGrid.Grid(gridDiv, gridOptions);
+    reloadData();
 
-    $.ajax({
-        type: 'GET',
-        url: '/personData',
-        success: function (data) {
-            setRowData(data);
-        },
-        error: function () {
-            console.log("Error ajax request.");
-        }
+    $('#clear').on('click', function () {
+        setRowData({});
+    });
+
+    $('#refresh').on('click', function () {
+       reloadData();
     });
 
 });

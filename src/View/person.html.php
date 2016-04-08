@@ -6,6 +6,10 @@
 </head>
 <body>
 <?php $this->import('navigate.html.php') ?>
+<div class="toolbarline">
+    <button id="clear" class="btn btn-default">Clear grid</button>
+    <button id="refresh" class="btn btn-default">Refresh grid</button>
+</div>
 
 <div class="container">
     <div class="row">
