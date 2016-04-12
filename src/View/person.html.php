@@ -1,8 +1,6 @@
 <html>
 <head>
     <?php $this->import('head.html.php') ?>
-    <link rel="stylesheet" type="text/css" href="bower_components/ag-grid/dist/styles/ag-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/theme-bootstrap-stripped.css">
 </head>
 <body>
 <?php $this->import('navigate.html.php') ?>
@@ -23,7 +21,10 @@
 <?php $this->import('script.html.php') ?>
 
 <!-- ag-grid -->
+<link rel="stylesheet" type="text/css" href="bower_components/ag-grid/dist/styles/ag-grid.css">
+<link rel="stylesheet" type="text/css" href="css/theme-bootstrap-stripped.css">
 <script type="text/javascript" src="bower_components/ag-grid/dist/ag-grid.js"></script>
+
 <script type="text/javascript" src="js/view/person.js"></script>
 </body>
 </html>

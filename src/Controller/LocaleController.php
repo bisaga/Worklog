@@ -14,7 +14,7 @@ class LocaleController
     {
         $fn = "./w2ui/locale/" . $file_path_name;
         $locale_content = file_get_contents($fn);
-
+               
         return $locale_content;
     }
 }

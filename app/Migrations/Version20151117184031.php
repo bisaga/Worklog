@@ -28,7 +28,6 @@ class Version20151117184031 extends AbstractMigration
         $worklogtable->addColumn('status', 'string', ['length' => 30]);
         $worklogtable->setPrimaryKey(['id']);        
         
-        
         // 
         $worklogline = $schema->createTable('worklogline');
         

@@ -6,4 +6,14 @@
  */
 
 $(function() {
+    $("#selectedDate").datetimepicker({
+        inline: true,
+        format: 'MM.DD.YYYY',
+        locale: 'en'
+    });
+
+    $('.clockpicker').clockpicker({
+        align: 'left',
+        donetext: 'Izberi'
+    });
 });
