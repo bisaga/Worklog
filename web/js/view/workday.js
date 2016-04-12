@@ -14,6 +14,6 @@ $(function() {
 
     $('.clockpicker').clockpicker({
         align: 'left',
-        donetext: 'Izberi'
+        donetext: 'Select'
     });
 });
