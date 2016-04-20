@@ -9,23 +9,25 @@ namespace Bisaga\Infrastructure\Core;
  *
  * @author igorb
  */
-class ServiceBase {
-    /** @var \Doctrine\DBAL\Connection $db */
-    private $db;
-    
-    /**
-     * @param \Doctrine\DBAL\Connection $db
-     */
-    public function __construct($db) {
-        $this->db = $db;
-    }
-    
-    /**
-     * @return \Doctrine\DBAL\Connection
-     */
-    protected function getConnection()
-    {
-        return $this->db;
-    }
-    
+class ServiceBase
+{
+  /** @var \Doctrine\DBAL\Connection $db */
+  private $db;
+
+  /**
+   * @param \Doctrine\DBAL\Connection $db
+   */
+  public function __construct($db)
+  {
+    $this->db = $db;
+  }
+
+  /**
+   * @return \Doctrine\DBAL\Connection
+   */
+  protected function getConnection()
+  {
+    return $this->db;
+  }
+
 }

@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class NotImplementedController
 {
-    
-    public function show(Application $app, Request $request)
-    {
-        $name = "This page is not implemented. Yet.";
-        return $app->render('notimplemented.html.php', array('name'=>$name));
-    }
+
+  public function show(Application $app, Request $request)
+  {
+    $name = 'This page is not implemented. Yet.';
+    return $app->render('notimplemented.html.php', array('name' => $name));
+  }
 }

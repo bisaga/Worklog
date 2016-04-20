@@ -11,52 +11,52 @@
 namespace Bisaga\Infrastructure\Core;
 
 
-class ViewService {
+class ViewService
+{
 
-    private $pageVars = array();
-    private $templateFile;
-    private $viewPath;
+  private $pageVars = array();
+  private $templateFile;
+  private $viewPath;
 
-    public function __construct($app)
-    {
-        $this->viewPath =$app['view_dir'];
-        $this->set('app', $app);
+  public function __construct($app)
+  {
+    $this->viewPath = $app['view_dir'];
+    $this->set('app', $app);
+  }
+
+  public function set($var, $val)
+  {
+    $this->pageVars[$var] = $val;
+  }
+
+  public function render($templateFile, $vars = null)
+  {
+    if ($vars != null) {
+      foreach ($vars as $key => $value) {
+        $this->set($key, $value);
+      }
     }
+    $this->set('view', $this);
 
-    public function set($var, $val)
-    {
-        $this->pageVars[$var] = $val;
-    }
+    $this->templateFile = $this->viewPath . '/' . $templateFile;
+    extract($this->pageVars);
 
-    public function render($templateFile, $vars = null)
-    {
-        if($vars != null)
-        {
-            foreach ($vars as $key => $value) {
-                $this->set($key, $value);
-            }
-        }
-        $this->set('view', $this);
+    ob_start();
 
-        $this->templateFile = $this->viewPath .'/'. $templateFile ;
-        extract($this->pageVars);
+    require($this->templateFile);
 
-        ob_start();
+    $contents = ob_get_contents();
+    ob_end_clean();
+    return $contents;
+  }
 
-        require($this->templateFile);
-
-        $contents = ob_get_contents();
-        ob_end_clean();
-        return $contents;
-    }
-
-    public function import($fileName)
-    {
-        ob_start();
-        include($this->viewPath .'/'. $fileName);
-        $contents = ob_get_contents();
-        ob_end_clean();
-        echo $contents;
-    }
+  public function import($fileName)
+  {
+    ob_start();
+    include($this->viewPath . '/' . $fileName);
+    $contents = ob_get_contents();
+    ob_end_clean();
+    echo $contents;
+  }
 
 }

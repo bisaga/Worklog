@@ -4,7 +4,7 @@
  * Copyright (c) Bisaga
  */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use Bisaga\Infrastructure\Console\PingCommand;
 use Symfony\Component\Console\Application;

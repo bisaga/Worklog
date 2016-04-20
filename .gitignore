@@ -1,8 +1,18 @@
 # exclude 
+# Package managers
+/node_modules/
 /composer.lock
 /vendor/
 /web/bower_components/
-/app/cache/
+/web/node_modules/
+# PHP Storm
 /.idea/
-ideas.txt
+# Visual Studio Code
 /.vscode/
+# Visual Studio 2015 + PHP Tools 
+/*.phpproj
+/*.phpproj.*
+/*.sln
+/.vs
+# Others
+ideas.txt

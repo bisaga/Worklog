@@ -1,14 +1,20 @@
 <html>
 <head>
-    <?php $view->import('head.html.php') ?>
+  <?php $view->import('head.html.php') ?>
 </head>
 <body>
 <?php $view->import('navigate.html.php') ?>
 
-<div class="container">
-<h1><?php echo $title ?></h1>
+<div class='container'>
+  <h1 id='title'><?php echo $title ?></h1>
 </div>
 
-<?php $view->import('script.html.php') ?>
 </body>
+<script>
+  // load requirejs config, common to all pages
+  requirejs(['./script/common'], function (common) {
+    // load script specific to the page
+    requirejs(['app/dashboard']);
+  });
+</script>
 </html>

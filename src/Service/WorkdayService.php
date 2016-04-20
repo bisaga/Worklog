@@ -13,17 +13,18 @@ use Bisaga\Model\WorklogTable;
  *
  * @author igorb
  */
-class WorkdayService extends ServiceBase {
+class WorkdayService extends ServiceBase
+{
 
-    public function save(WorklogTable $table)
-    {
-        $cn = $this->getConnection();
-        
-        $test = $table->getId();
-        $cn->beginTransaction();
-        
-        $stmt = $cn->createQueryBuilder();
-        $stmt->insert(WorklogTable::Table);
-        $cn->commit();
-    }   
+  public function save(WorklogTable $table)
+  {
+    $cn = $this->getConnection();
+
+    $test = $table->getId();
+    $cn->beginTransaction();
+
+    $stmt = $cn->createQueryBuilder();
+    $stmt->insert(WorklogTable::Table);
+    $cn->commit();
+  }
 }
