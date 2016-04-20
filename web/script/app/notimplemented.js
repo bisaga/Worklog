@@ -9,7 +9,9 @@ define(function (require) {
   require('bootstrap');
   var $ = require('jquery');
 
+  // document ready function
   $(function () {
-    //$('#title').html("Ni da ni!");
+
   });
 });
+

@@ -10,5 +10,12 @@
 </div>
 
 </body>
+<script>
+  // load requirejs config, common to all pages
+  requirejs(['./script/common'], function (common) {
+    // load script specific to the page
+    requirejs(['app/notimplemented']);
+  });
+</script>
 </html>
 
