@@ -16,3 +16,4 @@
 /.vs
 # Others
 ideas.txt
+.eslintrc.json
